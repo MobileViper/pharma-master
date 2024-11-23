@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>HALTONS PHARMACY &mdash; Your trusted store</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link href="https://fonts.googleapis.com/css?family=Rubik:400,700|Crimson+Text:400,400i" rel="stylesheet">
+  <link rel="stylesheet" href="fonts/icomoon/style.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/magnific-popup.css">
+  <link rel="stylesheet" href="css/jquery-ui.css">
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/owl.theme.default.min.css">
+  <link rel="stylesheet" href="css/aos.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <div class="site-wrap">
+    <div class="site-navbar py-2">
+      <div class="search-wrap">
+        <div class="container">
+          <a href="#" class="search-close js-search-close"><span class="icon-close2"></span></a>
+          <form action="#" method="post">
+            <input type="text" class="form-control" placeholder="Search keyword and hit enter...">
+          </form>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="d-flex align-items-center justify-content-between">
+          <div class="logo">
+            <div class="site-logo">
+              <a href="index.html" class="js-logo-clone">HALTONS PHARMACY</a>
+            </div>
+          </div>
+          <div class="main-nav d-none d-lg-block">
+            <nav class="site-navigation text-right text-md-center" role="navigation">
+              <ul class="site-menu js-clone-nav d-none d-lg-block">
+                <li class="active"><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Store</a></li>
+                <li class="has-children">
+                  <a href="#">Dropdown</a>
+                  <ul class="dropdown">
+                    <li><a href="Supplements.html">Supplements</a></li>
+                    <li><a href="Vitamins.html">Vitamins</a></li>
+                    <li><a href="Healthcare.html">Healthcare</a></li>
+                  </ul>
+                </li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+              </ul>
+            </nav>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-light py-3">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 mb-0"><a href="index.html">Home</a> <span class="mx-2 mb-0">/</span> <a href="shop.html">Store</a> <span class="mx-2 mb-0">/</span> <strong class="text-black">USN Bluelab 100% Premium Whey Vanilla 2kg</strong></div>
+        </div>
+      </div>
+    </div>
+    <div class="site-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-5 mr-auto">
+            <div class="border text-center">
+              <img src="images/wheyblue.jpeg" id="productImage" alt="Image" class="img-fluid p-5">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <h2 class="text-black" id="productName">USN Bluelab 100% Premium Whey Vanilla 2kg</h2>
+            <p id="productDescription">BLUELAB™ 100% WHEY is an ultra-premium blend of the highest quality whey protein isolate, concentrate and hydrolysate for optimal muscle development, support and recovery. BLUELAB™ 100% WHEY is developed by the consumer, for the consumer in a range of exciting, delicious flavors. BLUELAB™ 100% WHEY is certified by Informed-Choice.org.
+              Increase lean muscle building
+              Enhance muscle recovery
+              Increased strength & muscle performance
+              Tolerase™ L : Makes it suitable for lactose intolerant individuals.
+              Protein isolate, hydrolysate & concentrate : Increases strength, muscle recovery and tissue formation
+              EAA & BCAA: Aids in muscle formation and muscle building and muscle recovery.
+              Calcium: Essential for the formation & maintenance of strong bones and teeth
+              Phosphorus: Manages how your body stores and uses energy. Assists with growth, maintenance and repair of tissue and cells.
+              B Vitamins: Assists with conversion from food to energy. Boost immune system
+            </p>
+            <p><strong class="text-primary h4" id="productPrice">KES 1</strong></p>
+
+            <div class="mb-5">
+              <div class="input-group mb-3" style="max-width: 220px;">
+                <div class="input-group-prepend">
+                  <button class="btn btn-outline-primary js-btn-minus" type="button">&minus;</button>
+                </div>
+                <input type="number" class="form-control text-center quantity-input" value="1" min="1" id="quantityInput" aria-label="Quantity">
+                <div class="input-group-append">
+                  <button class="btn btn-outline-primary js-btn-plus" type="button">&plus;</button>
+                </div>
+              </div>
+            </div>
+            <button class="btn btn-primary btn-add-to-cart" id="addToCartBtn">Add to Cart</button>
+
+            <div id="notification" class="alert alert-success" style="display:none; position:fixed; top:20px; right:20px; z-index:1000;">
+              Product added to cart!
+          </div>
+     
+            <div class="mt-5">
+              <ul class="nav nav-pills mb-3 custom-pill" id="pills-tab" role="tablist">
+                <li class="nav-item">
+                  <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Ordering Information</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Specifications</a>
+                </li>
+              </ul>
+              <div class="tab-content" id="pills-tabContent">
+                <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                  <table class="table custom-table">
+                    <thead>
+                      <th>Material</th>
+                      <th>Description</th>
+                      <th>Packaging</th>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">USN100WHEY</th>
+                        <td>Protein Supplement: USN Bluelab 100% Premium Whey, Vanilla, 2kg</td>
+                        <td>1 Tub</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">USN100WHEY</th>
+                        <td>Protein Supplement: USN Bluelab 100% Premium Whey, Vanilla, 2kg</td>
+                        <td>6/CS</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">USN100WHEY</th>
+                        <td>Protein Supplement: USN Bluelab 100% Premium Whey, Vanilla, 2kg</td>
+                        <td>1 EA</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                  <table class="table custom-table">
+                    <tbody>
+                      <tr>
+                        <td>MANUFACTURER CODE</td>
+                        <td class="bg-light">B0626801000179</td>
+                      </tr>
+                      <tr>
+                        <td>SUPPLIER CODE</td>
+                        <td class="bg-light">001</td>
+                      </tr>
+                      <tr>
+                        <td>SKU</td>
+                        <td class="bg-light">0072026</td>
+                      </tr>
+                      <tr>
+                        <td>BARCODE</td>
+                        <td class="bg-light">1234567890</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <footer class="site-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <p>
+              &copy; 2024 Haltons Pharmacy. All Rights Reserved.
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/aos.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+    const addToCartBtn = document.getElementById('addToCartBtn');
+
+    addToCartBtn.addEventListener('click', function () {
+        const productId = this.getAttribute('data-id');
+        const productName = this.getAttribute('data-name');
+        const productPrice = parseFloat(this.getAttribute('data-price'));
+        const productImage = this.getAttribute('data-image');
+        const quantityInput = document.getElementById('quantityInput');
+        const quantity = parseInt(quantityInput.value);
+
+        // Prepare the product object
+        const product = {
+            id: productId,
+            name: productName,
+            price: productPrice,
+            image: productImage,
+            quantity: quantity,
+        };
+
+        // Add to cart
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const existingProductIndex = cart.findIndex(item => item.id === productId);
+
+        if (existingProductIndex > -1) {
+            // Update quantity if product already in cart
+            cart[existingProductIndex].quantity += quantity;
+        } else {
+            // Add new product to cart
+            cart.push(product);
+        }
+
+        localStorage.setItem('cart', JSON.stringify(cart));
+        alert(`${productName} has been added to your cart!`);
+
+        // Redirect to cart1.html
+        window.location.href = 'cart1.html';
+    });
+});
+  </script>  
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    // Example product data; replace with actual data
+    const products = {
+        "1": {
+            name: "USN Bluelab 100% Premium Whey Vanilla 2kg",
+            price: 4000,
+            image: "images/wheyblue.jpeg",
+            
+          },
+        "2": {
+            name: "Winner's Energ-G Extreme",
+            price: 999,
+            image: "images/winnersE.png",
+            
+        },
+        "3": {
+        name: "Whey Protein Chocolate 2kg",
+        price: 5999,
+        image: "images/wheychoco.jpeg",
+    },
+        "4": {
+        name: "Ascoril Expectorant",
+        price: "270",
+        image: "images/Ascoril.JPG",
+    },
+    "5": {
+        name: "Coldcap Capsules",
+        price: 147,
+        image: "images/coldcap.jpg",
+    },
+    "6": {
+        name: "Flugone Cough Syrup",
+        price: 330,
+        image: "images/Flugone-DM-Syrup.jpg",
+        
+    },
+    "7": {
+        name: "Cerave Moisturizing Cream",
+        price: 3500,
+        image: "images/cerave-moisturizing-cream-454g.jpg"
+    },
+    "8": {
+        name: "Cerave Hydrating Cleanser 473ml",
+        price: 2600,
+        image: "images/CeraveHydratingCleanser 473ml.png",
+    },
+    "9": {
+        name: "Cerave Blemish Control Cleanser",
+        price: 2250,
+        image: "images/CeraveBlemishCleanser.jpeg",
+    },
+    "10": {
+        name: "Panadol Cold & Flu Caplets",
+        price: 500,
+        image: "images/Panadol.jpg",
+    },
+    "11": {
+        name: "Panadol Syrup",
+        price: 586,
+        image: "images/PanadolElixir.jpg",
+    },
+    "12": {
+        name: "Panadol Extra with Opti Zorb",
+        price: 858,
+        image: "images/PanadolExtra.jpg",
+    },
+    "13": {
+        name: "Brufen Paed Susp",
+        price: 999,
+        image: "images/brufen.JPG",
+    },
+    "14": {
+        name: "Biofreeze Large Pain Patch",
+        price: 1600,
+        image: "images/biofreeze.JPG",
+    },
+    "15": {
+        name: "Calpol Infant Suspension",
+        price: 290,
+        image: "images/calpol.JPG",
+    },
+    "16": {
+        name: "Cipladon 500mg",
+        price: 250,
+        image: "images/cipladon.JPG"
+    },
+    "17": {
+        name: "Deep Heat Period Pain",
+        price: 245,
+        image: "images/deepheat.JPG",
+    },
+    "18": {
+        name: "Efferalgan 500mg",
+        price: 333,
+        image: "images/efferalgan.JPG",
+    },
+    "19": {
+        name: "Fenplus Tablets 30",
+        price: 450,
+        image: "images/fenplus.JPG",
+    },
+    "20": {
+        name: "Gracet 125mg Suppository",
+        price: 300,
+        image: "images/gracet.JPG",
+    },
+    "21": {
+        name: "Hedex Tablets 100's",
+        price: 953,
+        image: "images/hedex.JPG",
+    },
+    "22": {
+        name: "Bragg Apple Cider Vinegar",
+        price: 1999,
+        image: "images/BraggApple.JPG",
+    },
+    "23": {
+        name: "Better You Vitamin B12",
+        price: 2400,
+        image: "images/BetterYou.JPG",
+    },
+    "24": {
+        name: "Appetizer B Syrup",
+        price: 1999,
+        image: "images/AppetizerB.JPG",
+    },
+    "25": {
+        name: "Bio Health Hawthorn Berry",
+        price: 2335,
+        image: "images/BioHaw.JPG",
+    },
+    "26": {
+        name: "Amroid capsules 20's",
+        price: 945,
+        image: "images/Amroid.JPG",
+    },
+    "27": {
+        name: "Amifer Syrup 200ml",
+        price: 660,
+        image: "images/Amifer.JPG",
+    },
+    "28": {
+        name: "Advancis Omega-3 capsules",
+        price: 1825,
+        image: "images/Calcimax.JPG"
+    },
+    "29": {
+        name: "Advancis Passival Sleep Tablets",
+        price: 870,
+        image: "images/AdvancisP.JPG",
+    },
+    "30": {
+        name: "Amlycure D.S Syrup",
+        price: 870,
+        image: "images/Amylcure.JPG",
+    },
+    "31": {
+        name: "Aminovit Syrup 200ml",
+        price: 1999,
+        image: "images/Aminovit.JPG",
+    },
+    "32": {
+        name: "Berocca Boost Tablets",
+        price: 999,
+        image: "images/Berroca.JPG",
+    },
+    "33": {
+        name: "Calcimax yrup 150ml",
+        price: 1999,
+        image: "images/Calcimax.JPG",
+    },
+    "34": {
+        name: "Diben Forest Berries 200ml",
+        price: 999,
+        image: "images/Diben.JPG",
+    },
+    "35": {
+        name: "Extrammune Syrup 200ml",
+        price: 845,
+        image: "images/Extrammune.JPG",
+    },
+    "36": {
+        name: "Fertilex Women Tablets",
+        price: 850,
+        image: "images/Fertilex.JPG",
+    },
+    "37": {
+        name: "Fertilex Men Tablets",
+        price: 850,
+        image: "images/FertilexM.JPG",
+    },
+    "38": {
+        name: "Astymin Syrup 200ml",
+        price: 480,
+        image: "images/Astymin.JPG",
+    },
+    "39": {
+        name: "Avalife Daily Capsules",
+        price: 850,
+        image: "images/Velvex.JPG"
+    },
+    "40": {
+        name: "Dettol Antiseptic 250ml",
+        price: 599,
+        image: "images/Dettol.JPG",
+    },
+    "41": {
+        name: "KedleyElasticated Ankle Support",
+        price: 1999,
+        image: "images/kedleyAnkle.JPG",
+    },
+    "42": {
+        name: "Kedley Elasticatd Hand Support",
+        price: 1999,
+        image: "images/KedleyHand.JPG",
+    },
+    "43": {
+        name: "Opsite Spray 100ml",
+        price: 300,
+        image: "images/Opsite.JPG",
+    },
+    "44": {
+        name: "Velvex Cotton wool",
+        price: 345,
+        image: "images/Velvex.JPG",
+           },
+    "45": {
+        name: "Biofreeze Pain Relieving Spray",
+        price: 1535,
+        image: "images/BiofreezePain.JPG",
+           },
+    "46": {
+        name: "Deep Freeze Cold Gel",
+        price: 925,
+        image: "images/DeepFreeze.JPG",
+        description: "Boosts your Gains with winner's Ener-G Extreme."
+    },
+    "47": {
+        name: "Dextracin Eye/Ear Drops 5ml",
+        price: 300,
+        image: "images/Dextracin.JPG",
+            },
+    "48": {
+        name: "Dura Tears Ointment 3.5g",
+        price: 550,
+        image: "images/DuraT.JPG",
+        
+    }
+        // Add more products as needed
+    };
+
+    // Get the product ID from the URL (assuming you pass it in the URL)
+    const urlParams = new URLSearchParams(window.location.search);
+    const productId = urlParams.get('id');
+
+    // Find the product based on ID
+    const product = products[productId];
+
+    // If product exists, display the details and set button attributes
+    if (product) {
+        document.getElementById('productName').textContent = product.name;
+        document.getElementById('productImage').src = product.image;
+        document.getElementById('productPrice').textContent = `KES ${product.price}`;
+        document.getElementById('productDescription').textContent = product.description;
+
+        // Update the Add to Cart button with the correct data attributes
+        const addToCartBtn = document.getElementById('addToCartBtn');
+        addToCartBtn.setAttribute('data-id', productId);
+        addToCartBtn.setAttribute('data-name', product.name);
+        addToCartBtn.setAttribute('data-price', product.price);
+        addToCartBtn.setAttribute('data-image', product.image);
+    } else {
+        alert('Product not found.');
+    }
+});
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+      // Retrieve the product ID from the URL
+      const urlParams = new URLSearchParams(window.location.search);
+      const productId = urlParams.get('id');
+
+      // Hard-coded product data
+      const products = {
+          "1": {
+              "name": "USN Bluelab 100% Premium Whey Vanilla 2kg",
+              "price": "4000",
+              "image": "images/wheyblue.jpeg",
+              "description": "A premium blend of whey protein isolate, concentrate, and hydrolysate for optimal muscle support."
+          },
+          "2": {
+              "name": "Winner's Energ-G Extreme",
+              "price": "999",
+              "image": "images/winnersE.png",
+              "description": "Boosts your Gains with winner's Ener-G Extreme."
+          },
+          "3": {
+              "name": "Whey Protein Chocolate 2kg",
+              "price": "5,999",
+              "image": "images/wheychoco.jpeg",
+              "description": "Boosts your Gains with winner's Ener-G Extreme."
+          },
+          "4": {
+              "name": "Ascoril Expectorant",
+              "price": "270",
+              "image": "images/Ascoril.JPG",
+              "description": "Boosts your Gains with winner's Ener-G Extreme."
+          },
+          "5": {
+              "name": "Coldcap Capsules",
+              "price": "147",
+              "image": "images/coldcap.jpg",
+              "description": "Boosts your Gains with winner's Ener-G Extreme."
+          },
+          "6": {
+              "name": "Flugone Cough Syrup",
+              "price": "330",
+              "image": "images/Flugone-DM-Syrup.jpg",
+              "description": "Boosts your Gains with winner's Ener-G Extreme."
+          },
+          "7": {
+              "name": "Cerave Moisturizing Cream",
+              "price": "3,500",
+              "image": "images/cerave-moisturizing-cream-454g.jpg",
+              "description": "Boosts your Gains with winner's Ener-G Extreme."
+          },
+          "8": {
+              "name": "Cerave Hydrating Cleanser 473ml",
+              "price": "2,600",
+              "image": "images/CeraveHydratingCleanser 473ml.png",
+              "description": "Boosts your Gains with winner's Ener-G Extreme."
+          },
+          "9": {
+              "name": "Cerave Blemish Control Cleanser",
+              "price": "2,250",
+              "image": "images/CeraveBlemishCleanser.jpeg",
+              "description": "Boosts your Gains with winner's Ener-G Extreme."
+          },
+          "10": {
+              "name": "Panadol Cold & Flu Caplets",
+              "price": "500",
+              "image": "images/Panadol.jpg",
+              "description": "Boosts your Gains with winner's Ener-G Extreme."
+          },
+          "11": {
+              "name": "Panadol Syrup",
+              "price": "586",
+              "image": "images/PanadolElixir.jpg",
+              "description": "Boosts your Gains with winner's Ener-G Extreme."
+          },
+          "12": {
+              "name": "Panadol Extra with Opti Zorb",
+              "price": "858",
+              "image": "images/PanadolExtra.jpg",
+              "description": "Boosts your Gains with winner's Ener-G Extreme."
+          },
+          "13": {
+              "name": "Brufen Paed Susp",
+              "price": "999",
+              "image": "images/brufen.JPG",
+              "description": "Boosts your Gains with winner's Ener-G Extreme."
+          },
+          "14": {
+              "name": "Biofreeze Large Pain Patch",
+              "price": "1,600",
+              "image": "images/biofreeze.JPG",
+              "description": "Boosts your Gains with winner's Ener-G Extreme."
+          },
+          "15": {
+              "name": "Calpol Infant Suspension",
+              "price": "290",
+              "image": "images/calpol.JPG",
+              "description": "Boosts your Gains with winner's Ener-G Extreme."
+          },
+          "16": {
+              "name": "Cipladon 500mg",
+              "price": "250",
+              "image": "images/cipladon.JPG",
+              "description": "Boosts your Gains with winner's Ener-G Extreme."
+          },
+          "17": {
+              "name": "Deep Heat Period Pain",
+              "price": "245",
+              "image": "images/deepheat.JPG",
+              "description": "Boosts your Gains with winner's Ener-G Extreme."
+          },
+          "18": {
+              "name": "Efferalgan 500mg",
+              "price": "330",
+              "image": "images/efferalgan.JPG",
+              "description": "Boosts your Gains with winner's Ener-G Extreme."
+          },
+          "19": {
+              "name": "Fenplus Tablets 30'",
+              "price": "450",
+              "image": "images/fenplus.JPG",
+              "description": "Boosts your Gains with winner's Ener-G Extreme."
+          },
+          "20": {
+              "name": "Gracet 125mg Suppository",
+              "price": "300",
+              "image": "images/gracet.JPG",
+              "description": "Boosts your Gains with winner's Ener-G Extreme."
+          },
+          "21": {
+              "name": "Hedex Tablets 100's",
+              "price": "953",
+              "image": "images/hedex.JPG",
+              "description": "Boosts your Gains with winner's Ener-G Extreme."
+          },
+          "22": {
+              "name": "Bragg Apple Cider Vinegar",
+              "price": "1,999",
+              "image": "images/BraggApple.JPG",
+              "description": "Boosts your Gains with winner's Ener-G Extreme."
+          },
+          "23": {
+              "name": "Better You Vitamin B12",
+              "price": "2,400",
+              "image": "images/BetterYou.JPG",
+              "description": "Boosts your Gains with winner's Ener-G Extreme."
+          },
+          "24": {
+              "name": "Appetizer B Syrup",
+              "price": "1,999",
+              "image": "images/AppetizerB.JPG",
+              "description": "Boosts your Gains with winner's Ener-G Extreme."
+          },
+          "25": {
+              "name": "Bio Health Hawthorn Berry",
+              "price": "2,335",
+              "image": "images/BioHaw.JPG",
+              "description": "Boosts your Gains with winner's Ener-G Extreme."
+          },
+          "26": {
+              "name": "Amroid capsules 20's",
+              "price": "945",
+              "image": "images/Amroid.JPG",
+              "description": "Boosts your Gains with winner's Ener-G Extreme."
+          },
+          "27": {
+              "name": "Amifer Syrup 200ml",
+              "price": "660",
+              "image": "images/Amifer.JPG",
+              "description": "Boosts your Gains with winner's Ener-G Extreme."
+          },
+          "28": {
+              "name": "Advancis Omega-3 capsules",
+              "price": "1,825",
+              "image": "images/Advancis.JPG",
+              "description": "Boosts your Gains with winner's Ener-G Extreme."
+          },
+          "29": {
+              "name": "Advancis Passival Sleep Tablets",
+              "price": "870",
+              "image": "images/AdvancisP.JPG",
+              "description": "Boosts your Gains with winner's Ener-G Extreme."
+          },
+          "30": {
+              "name": "Amlycure D.S Syrup",
+              "price": "870",
+              "image": "images/Amylcure.JPG",
+              "description": "Boosts your Gains with winner's Ener-G Extreme."
+          },
+          "31": {
+              "name": "Aminovit Syrup 200ml",
+              "price": "1,999",
+              "image": "images/Aminovit.JPG",
+              "description": "Boosts your Gains with winner's Ener-G Extreme."
+          },
+          "32": {
+              "name": "Berocca Boost Tablets",
+              "price": "999",
+              "image": "images/Berroca.JPG",
+              "description": "Boosts your Gains with winner's Ener-G Extreme."
+          },
+          "33": {
+              "name": "Calcimax yrup 150ml",
+              "price": "1,999",
+              "image": "images/Calcimax.JPG",
+              "description": "Boosts your Gains with winner's Ener-G Extreme."
+          },
+          "34": {
+              "name": "Diben Forest Berries 200ml",
+              "price": "999",
+              "image": "images/Diben.JPG",
+              "description": "Boosts your Gains with winner's Ener-G Extreme."
+          },
+          "35": {
+              "name": "Extrammune Syrup 200ml",
+              "price": "845",
+              "image": "images/Extrammune.JPG",
+              "description": "Boosts your Gains with winner's Ener-G Extreme."
+          },
+          "36": {
+              "name": "Fertilex Women Tablets",
+              "price": "850",
+              "image": "images/Fertilex.JPG",
+              "description": "Boosts your Gains with winner's Ener-G Extreme."
+          },
+          "37": {
+              "name": "Fertilex Men Tablets",
+              "price": "850",
+              "image": "images/FertilexM.JPG",
+              "description": "Boosts your Gains with winner's Ener-G Extreme."
+          },
+          "38": {
+              "name": "Astymin Syrup 200ml",
+              "price": "480",
+              "image": "images/Astymin.JPG",
+              "description": "Boosts your Gains with winner's Ener-G Extreme."
+          },
+          "39": {
+              "name": "Avalife Daily Capsules",
+              "price": "850",
+              "image": "images/Avalife.JPG",
+              "description": "Boosts your Gains with winner's Ener-G Extreme."
+          },
+          "40": {
+              "name": "Dettol Antiseptic 250ml",
+              "price": "599",
+              "image": "images/Dettol.JPG",
+              "description": "Boosts your Gains with winner's Ener-G Extreme."
+          },
+          "41": {
+              "name": "KedleyElasticated Ankle Support",
+              "price": "1,999",
+              "image": "images/kedleyAnkle.JPG",
+              "description": "Boosts your Gains with winner's Ener-G Extreme."
+          },
+          "42": {
+              "name": "Kedley Elasticatd Hand Support",
+              "price": "1,999",
+              "image": "images/KedleyHand.JPG",
+              "description": "Boosts your Gains with winner's Ener-G Extreme."
+          },
+          "43": {
+              "name": "Opsite Spray 100ml",
+              "price": "300",
+              "image": "images/Opsite.JPG",
+              "description": "Boosts your Gains with winner's Ener-G Extreme."
+          },
+          "44": {
+              "name": "Velvex Cotton wool",
+              "price": "345",
+              "image": "images/Velvex.JPG",
+              "description": "Boosts your Gains with winner's Ener-G Extreme."
+          },
+          "45": {
+              "name": "Biofreeze Pain Relieving spray",
+              "price": "1,535",
+              "image": "images/BiofreezePain.JPG",
+              "description": "Boosts your Gains with winner's Ener-G Extreme."
+          },
+          "46": {
+              "name": "Deep Freeze Cold Gel",
+              "price": "925",
+              "image": "images/DeepFreeze.JPG",
+              "description": "Boosts your Gains with winner's Ener-G Extreme."
+          },
+          "47": {
+              "name": "Dextracin Eye/Ear Drops 5ml",
+              "price": "300",
+              "image": "images/Dextracin.JPG",
+              "description": "Boosts your Gains with winner's Ener-G Extreme."
+          },
+          "48": {
+              "name": "Dura Tears Ointment 3.5g",
+              "price": "550",
+              "image": "images/DuraT.JPG",
+              "description": "Boosts your Gains with winner's Ener-G Extreme."
+          },
+      };
+
+      // Find the product based on ID
+      const product = products[productId];
+
+      // If product exists, display the details
+      if (product) {
+          document.getElementById('productName').textContent = product.name;
+          document.getElementById('productImage').src = product.image;
+          document.getElementById('productPrice').textContent = `KES ${product.price}`;
+          document.getElementById('productDescription').textContent = product.description;
+          document.getElementById('addToCartBtn').setAttribute('data-id', productId);
+      } else {
+          alert('Product not found.');
+      }
+  });
+</script>
+ <script>
+    document.getElementById('addToCartBtn').addEventListener('click', function () {
+    const productId = this.getAttribute('data-id');
+    const productName = this.getAttribute('data-name');
+    const productPrice = parseFloat(this.getAttribute('data-price'));
+    const productImage = this.getAttribute('data-image');
+    const quantityInput = document.getElementById('quantityInput');
+    const quantity = parseInt(quantityInput.value) || 1; // Default to 1 if not a valid number
+
+    // Prepare the product object
+    const product = {
+        id: productId,
+        name: productName,
+        price: productPrice,
+        image: productImage,
+        quantity: quantity,
+    };
+
+    // Add to cart
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const existingProductIndex = cart.findIndex(item => item.id === productId);
+
+    if (existingProductIndex > -1) {
+        // Update quantity if product already in cart
+        cart[existingProductIndex].quantity += quantity;
+    } else {
+        // Add new product to cart
+        cart.push(product);
+    }
+
+    localStorage.setItem('cart', JSON.stringify(cart));
+    alert(`${productName} has been added to your cart!`);
+// Show notification
+notification.style.display = 'block';
+        notification.textContent = `${productName} has been added to your cart!`;
+
+        // Hide notification after 3 seconds
+        setTimeout(() => {
+            notification.style.display = 'none';
+        }, 3000);
+
+        // Redirect to cart1.html after a short delay
+        setTimeout(() => {
+            window.location.href = 'cart1.html';
+        }, 1000);
+});
+  </script>
+</body>
+
+</html>
