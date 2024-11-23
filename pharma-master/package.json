@@ -2,10 +2,10 @@
     "name": "pharma-master",
     "version": "1.0.0",
     "description": "Haltons Pharmacy Web App",
-    "main": "index.js",
+    "main": "server.js",
     "scripts": {
-      "start": "node index.js",
-      "dev": "nodemon index.js"
+      "start": "node server.js",
+      "dev": "nodemon server.js"
     },
     "engines": {
       "node": "14.x",
