@@ -9,6 +9,15 @@ const mailgun = require("mailgun-js"); // Import Mailgun
 
 const app = express();
 const PORT = process.env.PORT || 4000; // Use port from environment variable or default to 4000
+const path = require("path");
+
+// Serve static files from the public directory
+app.use(express.static(path.join(__dirname, 'public')));
+
+// Fallback route to serve index.html for unmatched routes
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
 
 // Middleware to enable CORS for all routes
 app.use(cors());
