@@ -10,13 +10,16 @@ const path = require("path");
 const app = express();
 const PORT = process.env.PORT || 4000;
 
-// Serve static files from the public directory
-app.use(express.static(path.join(__dirname, 'public')));
+// Serve static files (CSS, JS, images) from their respective directories
+app.use(express.static(path.join(__dirname, 'css')));
+app.use(express.static(path.join(__dirname, 'js')));
+app.use(express.static(path.join(__dirname, 'images')));
 
-// Fallback route to serve index.html for unmatched routes
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+// Serve index.html when the root URL is accessed
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
+
 
 // Middleware to enable CORS for all routes
 app.use(cors());
@@ -104,8 +107,7 @@ app.post('/api/location/update', (req, res) => {
         res.status(400).send('Invalid location data.');
     }
 });
-
-// Start server
-app.listen(PORT, () => {
-    console.log(`Server running on http://localhost:${PORT}`);
-});
+// Start the server
+app.listen(port, () => {
+    console.log(`Server is running on port ${port}`);
+  });
