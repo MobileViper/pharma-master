@@ -120,3 +120,24 @@ app.post('/api/location/update', (req, res) => {
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
 });
+//testing path fix
+const fs = require('fs');
+
+app.use((req, res, next) => {
+    if (req.path.endsWith('.html') || req.path.endsWith('.css') || req.path.endsWith('.js')) {
+        const filePath = path.join(__dirname, 'public', req.path);
+        if (fs.existsSync(filePath)) {
+            let content = fs.readFileSync(filePath, 'utf8');
+
+            // Update paths dynamically for HTML/CSS/JS files
+            content = content
+                .replace(/href="css\//g, 'href="/public/css/')
+                .replace(/src="js\//g, 'src="/public/js/')
+                .replace(/src="images\//g, 'src="/public/images/');
+
+            res.send(content);
+            return;
+        }
+    }
+    next(); // Continue to the next middleware if no file rewrite is needed
+});
