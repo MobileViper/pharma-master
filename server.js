@@ -8,16 +8,14 @@ const bodyParser = require('body-parser');
 const path = require("path");
 
 const app = express();
-const PORT = process.env.PORT || 4000;
+const port = process.env.PORT || 4000;
 
-// Serve static files (CSS, JS, images) from their respective directories
-app.use(express.static(path.join(__dirname, 'css')));
-app.use(express.static(path.join(__dirname, 'js')));
-app.use(express.static(path.join(__dirname, 'images')));
+// Serve static files from a custom directory (e.g., 'myDirectory')
+app.use(express.static(path.join(__dirname, 'C:/xampp/htdocs/pharma-master')));
 
-// Serve index.html when the root URL is accessed
+// Serve index.html from your custom directory
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+    res.sendFile(path.join(__dirname, 'C:/xampp/htdocs/pharma-master', 'index.html'));
 });
 
 // Middleware to enable CORS for all routes
