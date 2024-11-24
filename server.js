@@ -20,7 +20,6 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-
 // Middleware to enable CORS for all routes
 app.use(cors());
 
