@@ -8,6 +8,8 @@ const bodyParser = require('body-parser');
 const path = require("path");
 
 const app = express();
+
+// Use the Heroku-provided PORT or fallback to 4000 for local development
 const port = process.env.PORT || 4000;
 
 // Serve static files from a custom directory (e.g., 'myDirectory')
@@ -104,7 +106,8 @@ app.post('/api/location/update', (req, res) => {
         res.status(400).send('Invalid location data.');
     }
 });
+
 // Start the server
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
-  });
+});
