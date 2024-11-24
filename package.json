@@ -8,8 +8,8 @@
     "dev": "nodemon server.js"
   },
   "engines": {
-    "node": ">=16",
-    "npm": ">=8"
+    "node": "^22.11.0",
+    "npm": "^10.9.0"
   },
   "dependencies": {
     "bcrypt": "^5.1.1",
