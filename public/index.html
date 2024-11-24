@@ -18,7 +18,7 @@
 
   <link rel="stylesheet" href="css/aos.css">
 
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="/css/style.css">
 
 </head>
 
@@ -368,12 +368,12 @@
   <script src="js/owl.carousel.min.js"></script>
   <script src="js/jquery.magnific-popup.min.js"></script>
   <script src="js/aos.js"></script>
-  <script src="js/main.js"></script>
+  <script src="/js/main.js"></script>
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
         // Fetch product data
-        fetch('products.json')
+        fetch('/products.json')
             .then(response => response.json())
             .then(data => {
                 const productList = document.getElementById('productList');
@@ -417,7 +417,7 @@
   // Redirect to signup.html if the user is not logged in
   document.addEventListener('DOMContentLoaded', () => {
       if (!sessionStorage.getItem('isLoggedIn')) {
-          window.location.href = 'signup.html';
+          window.location.href = '/signup.html';
       }
   });
 </script>

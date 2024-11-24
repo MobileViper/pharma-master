@@ -1,39 +1,37 @@
 // Load environment variables from .env file
-require('dotenv').config(); // Load environment variables
-const express = require("express");
-const mongoose = require("mongoose");
-const cors = require("cors");
+require('dotenv').config();
+
+const express = require('express');
+const mongoose = require('mongoose');
+const cors = require('cors');
 const bcrypt = require('bcrypt');
 const bodyParser = require('body-parser');
-const path = require("path");
+const path = require('path');
+const helmet = require('helmet');
+const Joi = require('joi');
 
 const app = express();
-
-// Use the Heroku-provided PORT or fallback to 4000 for local development
 const port = process.env.PORT || 4000;
 
-// Serve static files from a custom directory (e.g., 'myDirectory')
-app.use(express.static(path.join(__dirname, 'C:/xampp/htdocs/pharma-master')));
+// Middleware
+app.use(helmet()); // Secure HTTP headers
+app.use(cors()); // Enable CORS
+app.use(express.json()); // Parse JSON payloads
+app.use(bodyParser.urlencoded({ extended: true })); // Parse URL-encoded payloads
+app.use(express.static(path.join(__dirname, 'public'))); // Serve static files from 'public' directory
 
-// Serve index.html from your custom directory
+// Serve index.html for the root route
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'C:/xampp/htdocs/pharma-master', 'index.html'));
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-// Middleware to enable CORS for all routes
-app.use(cors());
+// MongoDB connection
+mongoose.connect(process.env.MONGODB_URI)
+    .then(() => console.log('Connected to MongoDB'))
+    .catch((err) => console.error('MongoDB connection error:', err));
 
-// Middleware to parse JSON
-app.use(express.json());
-
-// Middleware to parse URL-encoded data
-app.use(bodyParser.urlencoded({ extended: true }));
-
-// Connect to MongoDB
-mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
-.then(() => console.log('Connected to MongoDB'))
-.catch((err) => console.error('MongoDB connection error:', err));
-
+mongoose.connection.on('error', (err) => console.error('MongoDB connection error:', err));
+mongoose.connection.on('disconnected', () => console.warn('MongoDB disconnected!'));
 
 // User schema and model
 const userSchema = new mongoose.Schema({
@@ -41,62 +39,72 @@ const userSchema = new mongoose.Schema({
     email: { type: String, required: true, unique: true },
     password: { type: String, required: true }
 });
+const User = mongoose.model('User', userSchema);
 
-const User = mongoose.model("User", userSchema);
+// Validation schemas
+const signupSchema = Joi.object({
+    name: Joi.string().min(3).required(),
+    email: Joi.string().email().required(),
+    password: Joi.string().min(8).required()
+});
 
-// Signup Route
-app.post("/signup", async (req, res) => {
+const loginSchema = Joi.object({
+    email: Joi.string().email().required(),
+    password: Joi.string().required()
+});
+
+// Routes
+app.post('/signup', async (req, res) => {
+    const { error } = signupSchema.validate(req.body);
+    if (error) return res.status(400).send(error.details[0].message);
+
     const { name, email, password } = req.body;
+
     try {
         const existingUser = await User.findOne({ email });
-        if (existingUser) {
-            return res.status(409).send("Email already registered.");
-        }
+        if (existingUser) return res.status(409).send('Email already registered.');
+
         const hashedPassword = await bcrypt.hash(password, 10);
         const user = new User({ name, email, password: hashedPassword });
         await user.save();
-        res.status(201).send("User registered successfully.");
-    } catch (error) {
-        console.error("Signup Error:", error);
-        res.status(500).send("Failed to register user.");
+
+        res.status(201).send('User registered successfully.');
+    } catch (err) {
+        console.error('Signup Error:', err);
+        res.status(500).send('Failed to register user.');
     }
 });
 
-// Login Route
-app.post("/login", async (req, res) => {
+app.post('/login', async (req, res) => {
+    const { error } = loginSchema.validate(req.body);
+    if (error) return res.status(400).send(error.details[0].message);
+
     const { email, password } = req.body;
 
     try {
         const user = await User.findOne({ email });
-
-        if (!user) {
-            return res.status(404).json({ message: 'User not found.' });
-        }
+        if (!user) return res.status(404).send('User not found.');
 
         const passwordMatch = await bcrypt.compare(password, user.password);
-        if (passwordMatch) {
-            res.status(200).json({ message: 'Login successful!' });
-        } else {
-            res.status(401).json({ message: 'Invalid email or password.' });
-        }
-    } catch (error) {
-        console.error("Login Error:", error);
-        res.status(500).json({ message: 'Internal server error' });
+        if (!passwordMatch) return res.status(401).send('Invalid email or password.');
+
+        res.status(200).send('Login successful!');
+    } catch (err) {
+        console.error('Login Error:', err);
+        res.status(500).send('Internal server error.');
     }
 });
 
-// Mock location data for demonstration purposes
+// Delivery person's location mock
 let deliveryPersonLocation = {
     latitude: -1.286389,
     longitude: 36.817223
 };
 
-// Endpoint to get the delivery person's location
 app.get('/api/location', (req, res) => {
     res.json(deliveryPersonLocation);
 });
 
-// Example: Update delivery person's location
 app.post('/api/location/update', (req, res) => {
     const { latitude, longitude } = req.body;
 
