@@ -1,14 +1,4 @@
 <!DOCTYPE html>
-<<<<<<< HEAD
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Delivery Tracking</title>
-    
-    <!-- Leaflet CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-=======
 <html lang="/en">
 <head>
     <meta charset="/UTF-8">
@@ -17,7 +7,6 @@
     
     <!-- Leaflet CSS -->
     <link rel="/stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/ />
->>>>>>> bd91b92 (Fixed paths for Heroku deployment and updated resources)
     
     <style>
         #map {
@@ -38,51 +27,29 @@
 </head>
 <body>
 
-<<<<<<< HEAD
-    <div id="map"></div>
-    <div id="eta">ETA: Calculating...</div>
-=======
     <div id="map"/></div>
     <div id="eta"/>ETA: Calculating...</div>
->>>>>>> bd91b92 (Fixed paths for Heroku deployment and updated resources)
 
     <!-- Leaflet JS -->
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script>
-<<<<<<< HEAD
-        const map = L.map('map').setView([-1.286389, 36.817223], 15);
-        let routePolyline;
-        let deliveryMarker;
-        let userMarker;
-        let etaDisplay = document.getElementById('eta');
-=======
         const map = L.map('/map').setView([-1.286389, 36.817223], 15);
         let routePolyline;
         let deliveryMarker;
         let userMarker;
         let etaDisplay = document.getElementById('/eta');
->>>>>>> bd91b92 (Fixed paths for Heroku deployment and updated resources)
 
         // Initial coordinates for delivery person
         let deliveryPos = [-1.29, 36.82];
 
         // Add OpenStreetMap tiles
-<<<<<<< HEAD
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-=======
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'/, {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'/
->>>>>>> bd91b92 (Fixed paths for Heroku deployment and updated resources)
         }).addTo(map);
 
         // Set up delivery marker and route simulation
         function setupMarkers() {
-<<<<<<< HEAD
-            deliveryMarker = L.marker(deliveryPos, { icon: L.icon({ iconUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png', iconSize: [25, 41] }) }).addTo(map).bindPopup('Delivery Person');
-=======
             deliveryMarker = L.marker(deliveryPos, { icon: L.icon({ iconUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png'/, iconSize: [25, 41] }) }).addTo(map).bindPopup('Delivery Person'/);
->>>>>>> bd91b92 (Fixed paths for Heroku deployment and updated resources)
             locateUser();
         }
 
@@ -105,11 +72,7 @@
                     if (routePolyline) map.removeLayer(routePolyline);
 
                     // Draw new route line
-<<<<<<< HEAD
-                    routePolyline = L.polyline([userPos, deliveryPos], { color: 'blue', weight: 3, dashArray: '5, 5' }).addTo(map);
-=======
                     routePolyline = L.polyline([userPos, deliveryPos], { color: '/blue', weight: 3, dashArray: '/5, 5' }).addTo(map);
->>>>>>> bd91b92 (Fixed paths for Heroku deployment and updated resources)
 
                     // Calculate distance and ETA
                     const distance = map.distance(userPos, deliveryPos);
@@ -130,15 +93,6 @@
             if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(position => {
                     const userPos = [position.coords.latitude, position.coords.longitude];
-<<<<<<< HEAD
-                    userMarker = L.marker(userPos).addTo(map).bindPopup('Your Location').openPopup();
-                    setupMarkers();
-                }, error => {
-                    console.error("Geolocation error:", error);
-                });
-            } else {
-                alert("Geolocation is not supported by this browser.");
-=======
                     userMarker = L.marker(userPos).addTo(map).bindPopup('/Your Location').openPopup();
                     setupMarkers();
                 }, error => {
@@ -146,7 +100,6 @@
                 });
             } else {
                 alert("/Geolocation is not supported by this browser.");
->>>>>>> bd91b92 (Fixed paths for Heroku deployment and updated resources)
             }
         }
 
