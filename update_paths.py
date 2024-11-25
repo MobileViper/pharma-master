@@ -22,6 +22,10 @@ def update_paths_in_file(file_path):
 
 def main():
     for root, _, files in os.walk(BASE_DIR):
+        # Skip the public directory to avoid modifying files inside it
+        if 'public' in root:
+            continue
+
         for file in files:
             if file.endswith(EXTENSIONS):
                 file_path = os.path.join(root, file)
