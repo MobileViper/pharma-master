@@ -4,7 +4,7 @@ require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 const bodyParser = require('body-parser');
 const path = require('path');
 const helmet = require('helmet');
@@ -17,7 +17,7 @@ const port = process.env.PORT || 4000;
 app.use(helmet()); // Secure HTTP headers
 app.use(cors()); // Enable CORS
 app.use(express.json()); // Parse JSON payloads
-app.use(bodyParser.urlencoded({ extended: true })); // Parse URL-encoded payloads
+app.use(express.urlencoded({ extended: true })); // Parse URL-encoded payloads
 app.use(express.static(path.join(__dirname, 'public'))); // Serve static files from 'public' directory
 
 // Serve index.html for the root route
@@ -83,7 +83,7 @@ app.post('/login', async (req, res) => {
 
     try {
         const user = await User.findOne({ email });
-        if (!user) return res.status(404).send('User not found.');
+        if (!user) return res.status(401).send('Invalid email or password.');
 
         const passwordMatch = await bcrypt.compare(password, user.password);
         if (!passwordMatch) return res.status(401).send('Invalid email or password.');
@@ -120,4 +120,3 @@ app.post('/api/location/update', (req, res) => {
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
 });
-
